@@ -168,4 +168,6 @@ export PATH="~/local/bin:${PATH}"
 # original-shell-scriptのPATH
 export PATH="~/original-shell-script:${PATH}"
 
-source ~/enhancd/init.sh
+# source ~/enhancd/init.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

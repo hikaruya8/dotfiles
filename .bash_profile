@@ -1,3 +1,3 @@
 #.bashrcの起動
 test -r ~/.bashrc && . ~/.bashrc
-source ~/enhancd/init.sh
+# source ~/enhancd/init.sh
