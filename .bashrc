@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -130,7 +130,7 @@ case $TERM in
 esac
 
 # エイリアス
-alias ls='ls -a --color=auto'
+alias ls='ls --color=auto'
 alias so='source'
 alias vi='vim'
 alias vb='vim ~/.bashrc'
@@ -141,19 +141,14 @@ alias mkdir='mkdir -p'
 alias back='pushd'
 alias diff='diff -U1'
 alias gitco='git commit -m'
-alias gitc='git commit -m'
+alias gitc='git commit -m "$*"'
 alias pyt='python'
 alias gits='git status'
 alias gita='git add'
+alias jn='jupyter notebook'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/hikaruya/google-cloud-sdk/path.bash.inc' ]; then . '/home/hikaruya/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/hikaruya/google-cloud-sdk/completion.bash.inc' ]; then . '/home/hikaruya/google-cloud-sdk/completion.bash.inc'; fi
-
-# LINE エモチャットのgoogle application credntial
-export GOOGLE_APPLICATION_CREDENTIALS="/home/hikaruya/emochat-5337973d0bb0.json"
+# see pickle file in terminal
+alias pcat='python -m pickle'
 
 # pyenvのPATHを通す
 export PYENV_ROOT="$HOME/.pyenv"
@@ -171,3 +166,6 @@ export PATH="~/original-shell-script:${PATH}"
 # source ~/enhancd/init.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# BoostNoteのバスを通す
+export PATH="~/AppImage:${PATH}"
